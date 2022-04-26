@@ -1,16 +1,14 @@
 import React from 'react';
 import {Image, StyleSheet, Dimensions, View} from "react-native";
 import Text from "../Text";
-import topo from "../../assets/topo.png";
 import logo from "../../assets/logo.png";
+import BasketTop from "./BasketTop";
 
-const width = Dimensions.get('screen').width;
 
 export default function Basket() {
   return (
     <>
-      <Image source={topo} style={styles.top} />
-      <Text style={styles.title}>Detalhes da Cesta</Text>
+      <BasketTop />
       <View style={styles.basket}>
         <Text style={styles.name}>Cesta de Verduras</Text>
         <View style={styles.farm}>
@@ -25,20 +23,6 @@ export default function Basket() {
 }
 
 const styles = StyleSheet.create({
-  top: {
-    width: "100%",
-    height: 578 / 768 * width,
-  },
-  title: {
-    width: "100%",
-    position: "absolute",
-    textAlign: "center",
-    fontSize:16,
-    lineHeight: 26,
-    color: "white",
-    fontWeight: "bold",
-    padding: 16
-  },
   basket: {
     paddingVertical: 8,
     paddingHorizontal: 16,
