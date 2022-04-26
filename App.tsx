@@ -1,6 +1,7 @@
 import {View, Platform, StyleSheet} from 'react-native';
 import StatusBar from "./src/components/StatusBar";
 import {useFonts, Montserrat_400Regular, Montserrat_700Bold} from '@expo-google-fonts/montserrat';
+import AppLoading from "expo-app-loading";
 import BasketScreen from "./src/screens/BasketScreen";
 import React from "react";
 
@@ -10,7 +11,8 @@ export default function App() {
     "Montserrat700": Montserrat_700Bold,
   });
   if (!loadedFont) {
-    return <View />
+    // @ts-ignore
+    return <AppLoading />
   }
   return (
     <View style={styles.container}>
@@ -27,8 +29,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  appBar: {
-    backgroundColor:'#79B45D',
-    height: APPBAR_HEIGHT,
-  },
+  // appBar: {
+  //   backgroundColor:'#79B45D',
+  //   height: APPBAR_HEIGHT,
+  // },
 });
