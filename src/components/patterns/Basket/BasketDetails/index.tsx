@@ -1,17 +1,17 @@
 import React from "react";
 import Text from "../../Text";
 import {Image, StyleSheet, View} from "react-native";
-import logo from "../../../assets/logo.png";
+import basket from "../../../mocks/basket";
 
 export default function BasketDetails() {
   return <>
-    <Text style={styles.name}>Cesta de Verduras</Text>
+    <Text style={styles.name}>{basket.basketDetails.name}</Text>
     <View style={styles.farm}>
-      <Image source={logo} style={styles.farmImage} />
-      <Text style={styles.farmTitle}>Jenny Jack Farm</Text>
+      <Image source={basket.basketDetails.farmLogo} style={styles.farmImage} />
+      <Text style={styles.farmTitle}>{basket.basketDetails.farmTitle}</Text>
     </View>
-    <Text style={styles.description}>Uma cesta de produtos selecionados cuidadosamente da fazenda direto para a sua cozinha</Text>
-    <Text style={styles.price}>R$ 40,00</Text>
+    <Text style={styles.description}>{basket.basketDetails.description}</Text>
+    <Text style={styles.price}>{basket.basketDetails.price}</Text>
   </>
 }
 
