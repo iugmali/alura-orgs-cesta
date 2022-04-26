@@ -1,7 +1,8 @@
-import {StatusBar, SafeAreaView, Text, View} from 'react-native';
-import CestaScreen from "./src/screens/BasketScreen";
+import {View, Platform, StyleSheet} from 'react-native';
+import StatusBar from "./src/components/StatusBar";
 import {useFonts, Montserrat_400Regular, Montserrat_700Bold} from '@expo-google-fonts/montserrat';
 import BasketScreen from "./src/screens/BasketScreen";
+import React from "react";
 
 export default function App() {
   const [loadedFont] = useFonts({
@@ -12,9 +13,22 @@ export default function App() {
     return <View />
   }
   return (
-    <SafeAreaView>
-      <StatusBar />
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#5E8D48" barStyle="light-content" />
+      {/*<View style={styles.appBar} />*/}
       <BasketScreen />
-    </SafeAreaView>
+    </View>
   );
 }
+
+const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  appBar: {
+    backgroundColor:'#79B45D',
+    height: APPBAR_HEIGHT,
+  },
+});
