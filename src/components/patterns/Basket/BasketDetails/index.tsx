@@ -1,17 +1,17 @@
 import React from "react";
-import Text from "../../Text";
+import Text from "../../../Text";
 import {Image, StyleSheet, View} from "react-native";
-import basket from "../../../mocks/basket";
+import {BasketDetailsProps} from "../../../../types/basket";
 
-export default function BasketDetails() {
+export default function BasketDetails({name, farmLogo, farmTitle, description, price}:BasketDetailsProps) {
   return <>
-    <Text style={styles.name}>{basket.basketDetails.name}</Text>
+    <Text style={styles.name}>{name}</Text>
     <View style={styles.farm}>
-      <Image source={basket.basketDetails.farmLogo} style={styles.farmImage} />
-      <Text style={styles.farmTitle}>{basket.basketDetails.farmTitle}</Text>
+      <Image source={farmLogo} style={styles.farmImage} />
+      <Text style={styles.farmTitle}>{farmTitle}</Text>
     </View>
-    <Text style={styles.description}>{basket.basketDetails.description}</Text>
-    <Text style={styles.price}>{basket.basketDetails.price}</Text>
+    <Text style={styles.description}>{description}</Text>
+    <Text style={styles.price}>{price}</Text>
   </>
 }
 

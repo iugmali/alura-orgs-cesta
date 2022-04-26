@@ -1,15 +1,15 @@
 import React from "react";
 import {Dimensions, Image, StyleSheet} from "react-native";
-import top from "../../../assets/topo.png";
-import Text from "../../Text";
-import basket from "../../../mocks/basket";
+import top from "../../../../assets/topo.png";
+import Text from "../../../Text";
+import {BasketTopProps} from "../../../../types/basket";
 
 const width = Dimensions.get('screen').width;
 
-export default function BasketTop() {
+export default function BasketTop({title}: BasketTopProps) {
   return <>
     <Image source={top} style={styles.top} />
-    <Text style={styles.title}>{basket.basketTop.title}</Text>
+    <Text style={styles.title}>{title}</Text>
   </>
 }
 

@@ -1,14 +1,15 @@
 import React from 'react';
-import { StyleSheet, View} from "react-native";
+import { StyleSheet, View } from "react-native";
 import BasketTop from "./BasketTop";
 import BasketDetails from "./BasketDetails";
+import { BasketProps } from "../../../types/basket";
 
-export default function Basket() {
+export default function Basket({basketTop, basketDetails}:BasketProps) {
   return (
     <>
-      <BasketTop />
+      <BasketTop {...basketTop} />
       <View style={styles.basket}>
-        <BasketDetails />
+        <BasketDetails {...basketDetails} />
       </View>
     </>
   )
