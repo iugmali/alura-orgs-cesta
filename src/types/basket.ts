@@ -15,4 +15,5 @@ export interface BasketDetailsProps {
   farmTitle: string;
   description: string;
   price: string;
+  button: string;
 }
