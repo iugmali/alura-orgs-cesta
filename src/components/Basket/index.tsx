@@ -1,18 +1,22 @@
 import React from 'react';
-import {Image, Text, StyleSheet, Dimensions, View} from "react-native";
-// @ts-ignore
+import {Image, StyleSheet, Dimensions, View} from "react-native";
+import Text from "../Text";
 import topo from "../../assets/topo.png";
+import logo from "../../assets/logo.png";
 
 const width = Dimensions.get('screen').width;
 
-export default function Cesta() {
+export default function Basket() {
   return (
     <>
       <Image source={topo} style={styles.top} />
       <Text style={styles.title}>Detalhes da Cesta</Text>
       <View style={styles.basket}>
         <Text style={styles.name}>Cesta de Verduras</Text>
-        <Text style={styles.farmTitle}>Jenny Jack Farm</Text>
+        <View style={styles.farm}>
+          <Image source={logo} style={styles.farmImage} />
+          <Text style={styles.farmTitle}>Jenny Jack Farm</Text>
+        </View>
         <Text style={styles.description}>Uma cesta de produtos selecionados cuidadosamente da fazenda direto para a sua cozinha</Text>
         <Text style={styles.price}>R$ 40,00</Text>
       </View>
@@ -32,7 +36,7 @@ const styles = StyleSheet.create({
     fontSize:16,
     lineHeight: 26,
     color: "white",
-    fontWeight: "700",
+    fontWeight: "bold",
     padding: 16
   },
   basket: {
@@ -43,11 +47,20 @@ const styles = StyleSheet.create({
     color: "#464646",
     fontSize: 26,
     lineHeight: 42,
-    fontWeight: "700",
+    fontWeight: "bold",
+  },
+  farm: {
+    flexDirection: "row",
+    paddingVertical: 12,
+  },
+  farmImage: {
+    width: 32,
+    height: 32
   },
   farmTitle: {
     fontSize: 16,
-    lineHeight: 26
+    lineHeight: 26,
+    marginLeft: 12
   },
   description: {
     color: "#A3A3A3",
@@ -56,7 +69,7 @@ const styles = StyleSheet.create({
   },
   price: {
     color: "#2A9F85",
-    fontWeight: "700",
+    fontWeight: "bold",
     fontSize: 26,
     lineHeight: 42,
     marginTop: 8
