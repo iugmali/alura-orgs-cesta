@@ -1,9 +1,9 @@
 import React from "react";
 import Text from "../../../Text";
-import {Image, StyleSheet, View} from "react-native";
+import {TouchableOpacity, Image, StyleSheet, View} from "react-native";
 import {BasketDetailsProps} from "../../../../types/basket";
 
-export default function BasketDetails({name, farmLogo, farmTitle, description, price}:BasketDetailsProps) {
+export default function BasketDetails({name, farmLogo, farmTitle, description, price, button}:BasketDetailsProps) {
   return <>
     <Text style={styles.name}>{name}</Text>
     <View style={styles.farm}>
@@ -12,6 +12,7 @@ export default function BasketDetails({name, farmLogo, farmTitle, description, p
     </View>
     <Text style={styles.description}>{description}</Text>
     <Text style={styles.price}>{price}</Text>
+    <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>{button}</Text></TouchableOpacity>
   </>
 }
 
@@ -46,5 +47,18 @@ const styles = StyleSheet.create({
     fontSize: 26,
     lineHeight: 42,
     marginTop: 8
+  },
+  button: {
+    marginTop: 16,
+    backgroundColor: "#2A9F85",
+    paddingVertical: 16,
+    borderRadius: 6
+  },
+  buttonText: {
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: "bold"
   }
 });
